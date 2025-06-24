@@ -70,6 +70,7 @@ resource "aws_instance" "Wizard_A"{
    ami = "ami-0db1de538d84beea0"
    instance_type = "t3.micro"
    subnet_id = aws_subnet.SubnetA.id
+   key_name = aws_key_pair.my_key.key_name
    vpc_security_group_ids = [aws_security_group.internal_ssh.id]
    associate_public_ip_address = false
  }
@@ -77,6 +78,7 @@ resource "aws_instance" "Wizard_B"{
    ami = "ami-0db1de538d84beea0"
    instance_type = "t3.micro"
    subnet_id = aws_subnet.SubnetB.id
+   key_name = aws_key_pair.my_key.key_name
    vpc_security_group_ids = [aws_security_group.internal_ssh.id]
    associate_public_ip_address = false
  }
