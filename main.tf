@@ -89,6 +89,9 @@ terraform {
     encrypt        = true
   }
 }
-
+resource "aws_key_pair" "my_key" {
+ key_name = "my-new-key"
+ public_key = file("~/.ssh/my-new-key.pub")
+}
 
 
